@@ -1,16 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { AuthProvider } from './reactFormVaidation/context/AuthProvider';
-import App from './App';
-
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { AuthProvider } from "./reactFormVaidation/context/AuthProvider";
+import App from "./App";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import './index.css';
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-     <AuthProvider>
-      <App />
-     </AuthProvider>
-   
+    <BrowserRouter>
+      <AuthProvider>
+        <Routes>
+          <Route path="/*" element={<App />} />
+        </Routes>
+      </AuthProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
-
